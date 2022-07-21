@@ -1,0 +1,26 @@
+{
+  "name": "exp",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "server": "nodemon app",
+    "client": "cd .. && cd client && npm start",
+    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
+  },
+  "dependencies": {
+    "@apollo/client": "^3.6.9",
+    "apollo-server": "^3.10.0",
+    "axios": "^0.27.2",
+    "concurrently": "^6.0.0",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^16.0.1",
+    "express": "~4.16.1",
+    "graphql": "^16.5.0",
+    "graphql-tools": "^8.3.0",
+    "http-errors": "~1.6.3",
+    "mongoose": "^6.4.4",
+    "morgan": "~1.9.1",
+    "pug": "2.0.0-beta11"
+  }
+}
