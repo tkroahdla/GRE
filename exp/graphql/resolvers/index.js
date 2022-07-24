@@ -1,7 +1,7 @@
-const Person = require('../../models/user');
-var people = async () => await Person.find();
+const User = require('../../models/user');
+var people = async () => await User.find();
 
-Person.find({}, function (err, docs) {
+User.find({}, function (err, docs) {
   if (err) {
     console.log(err);
   } else {
@@ -13,7 +13,7 @@ const resolvers = {
   Query: {
     async people(_, args) {
       try {
-        const people = await Person.find();
+        const people = await User.find();
         return people;
       } catch (err) {
         console.log(err);
@@ -29,7 +29,7 @@ const resolvers = {
       return _.name;
     },
     async friends(_, args) {
-      const friends = await Person.find({ _id: { $in: _.friendIds } });
+      const friends = await User.find({ _id: { $in: _.friendIds } });
       return friends;
     },
   },

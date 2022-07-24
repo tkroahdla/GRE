@@ -1,36 +1,14 @@
-{
-  /**import axios from 'axios';
-import { useEffect } from 'react';
-import { gql, useQuery } from '@apollo/client';
-import {} from 'graphql';
-
-const friendList = gql`
-  query {
-    people {
-      friends {
-        name
-        _id
-      }
-    }
-  }
-`;
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { test } from './ApolloClient';
+import Main from './routes/Main';
 
 const App = () => {
-  const { data } = useQuery(friendList);
-  console.log(data);
-  const callApi = async () => {
-    axios.get('/api').then((res) => {
-      console.log(res.data.test);
-    });
-  };
-
-  useEffect(() => {
-    callApi();
-  }, []);
-
-  return <div className="App"></div>;
+  test();
+  return (
+    <Router path="/">
+      <Main></Main>
+    </Router>
+  );
 };
 
 export default App;
- */
-}
